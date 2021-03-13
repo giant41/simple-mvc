@@ -18,22 +18,6 @@ class User extends Controller {
 		$this->view('templates/footer');
 	}
 
-	public function edit($id){
-
-		$data['title'] = 'Detail Mahasiswa';
-		$data['mhs'] = $this->model('User_model')->getUserById($id);
-		$this->view('templates/header', $data);
-		$this->view('mahasiswa/edit', $data);
-		$this->view('templates/footer');
-	}
-
-	public function tambah(){
-		$data['title'] = 'Tambah Mahasiswa';		
-		$this->view('templates/header', $data);
-		$this->view('mahasiswa/tambah');
-		$this->view('templates/footer');
-	}
-
 	public function addUser(){		
 
 		if( $this->model('User_model')->addUser($_POST) > 0 ) {
