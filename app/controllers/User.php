@@ -79,10 +79,6 @@ class User extends Controller {
 	}
 
     public function search(){ 
-
-        // print_r($search);
-        // die;
-
 		$data['title'] = 'Search Data User';
 		$data['users'] = $this->model('User_model')->searchUserData($_POST);
 		$this->view('templates/header', $data);
